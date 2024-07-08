@@ -37,7 +37,7 @@ async def help(ctx):  # Use Context type
     view.add_item(button)
 
     # Send a message with the Button to the chat
-    await ctx.send('สวัสดี! คุณต้องการความช่วยเหลือในสิ่งใด?', view=view)
+    await ctx.send('สวัสดี! คุณต้องการความช่วยเหลือในสิ่งใด?', view=view, ephemeral=True)
 
 
 @bot.hybrid_command(name='ping', description='ค่าปิงของบอท.')
