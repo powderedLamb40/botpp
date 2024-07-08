@@ -21,6 +21,11 @@ class Bot(commands.Bot):
                                     url="https://www.twitch.tv/powderedlamb40")
         await self.change_presence(activity=activity)
 
+intents = discord.Intents.all()
+intents.messages = True
+intents.members = True
+bot = Bot(intents=intents)
+
 @bot.hybrid_command(name='help_pp', description='ขอความช่วยเหลือ.')
 async def help(ctx):  # Use Context type
     button = Button(style=discord.ButtonStyle.link,
