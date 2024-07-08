@@ -41,7 +41,7 @@ async def ping(ctx):  # Use Context type
     latency = bot.latency
     # แปลงค่า latency จากวินาทีเป็นมิลลิวินาที
     latency_ms = latency * 1000
-    await ctx.send(f'บอทมีค่า ping เท่ากับ 
+    await ctx.send(f'บอทมีค่า ping เท่ากับ {latency_ms:.2f} มิลลิวินาที')
 
 
 bot.run(TOKEN)
