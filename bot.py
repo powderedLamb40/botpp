@@ -1,6 +1,5 @@
 import discord
 from discord.ext import commands
-from config import TOKEN_BOT
 from discord import ButtonStyle
 from discord.ui import Modal, Button, View, TextInput
 import config
