@@ -1,6 +1,8 @@
 import discord
 from discord.ext import commands
 from config import TOKEN_BOT
+from discord import ButtonStyle
+from discord.ui import Modal, Button, View, TextInput
 
 TOKEN = config.TOKEN
 
@@ -20,6 +22,26 @@ class Bot(commands.Bot):
                                     url="https://www.twitch.tv/powderedlamb40")
         await self.change_presence(activity=activity)
 
+@bot.hybrid_command(name='help_pp', description='ขอความช่วยเหลือ.')
+async def help(ctx):  # Use Context type
+    button = Button(style=discord.ButtonStyle.link,
+                    label='ขอความช่วยเหลือ',
+                    url='https://discord.gg/yNKGyDumje')
+
+    # Create a View to contain the Button
+    view = View()
+    view.add_item(button)
+
+    # Send a message with the Button to the chat
+    await ctx.send('สวัสดี! คุณต้องการความช่วยเหลือในสิ่งใด?', view=view)
+
+
+@bot.hybrid_command(name='ping', description='ค่าปิงของบอท.')
+async def ping(ctx):  # Use Context type
+    latency = bot.latency
+    # แปลงค่า latency จากวินาทีเป็นมิลลิวินาที
+    latency_ms = latency * 1000
+    await ctx.send(f'บอทมีค่า ping เท่ากับ 
 
 
 bot.run(TOKEN)
