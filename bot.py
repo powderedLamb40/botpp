@@ -1,4 +1,7 @@
-import discord
+try:
+    import discord
+except ImportError :
+    os.system("pip install discord")
 from discord.ext import commands
 from discord import ButtonStyle
 from discord.ui import Modal, Button, View, TextInput
